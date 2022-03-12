@@ -91,21 +91,41 @@ public class StartPhoneBook {
 
         wd.findElement(By.cssSelector(""));// поиск по CSS Selector
 
-        //если моя стратегия By tagName
+        //если моя стратегия By tagName CSS
         wd.findElement(By.cssSelector("div"));
         wd.findElement(By.cssSelector("a"));
 
-        //поиск By class
+        //если моя стратегия By tagName xPath
+        wd.findElement(By.xpath("//div"));
+        wd.findElement(By.xpath("//a"));
+
+        //поиск By class CSS
         wd.findElement(By.cssSelector(".login_login__3EHKB"));
 
-        //поиск By id
+        //поиск By class xPath
+        wd.findElement(By.xpath("//*[@class='login_login__3EHKB']")); // подойдет любой element с атрибутом class = login_login__3EHKB
+
+
+        //поиск By id CSS
         wd.findElement(By.cssSelector("#root"));
 
-        //поиск по атрибуту
+        //поиск By id xPath
+        wd.findElement(By.xpath("//*[@id='root']"));
+
+        //поиск по атрибуту CSS
         wd.findElement(By.cssSelector("[placeholder]"));
         wd.findElement(By.cssSelector("[placeholder='Password']"));
         wd.findElement(By.cssSelector("[placeholder *='ss']"));
+        wd.findElement(By.cssSelector("[placeholder ^='Pa']"));
         wd.findElement(By.cssSelector("[placeholder $='rd']"));
+
+        //поиск по атрибуту xPath
+        wd.findElement(By.xpath("//*[@placeholder]"));
+        wd.findElement(By.xpath("//*[@placeholder ='Password']"));
+        wd.findElement(By.xpath("//*[contains(@placeholder,'ss']"));
+        wd.findElement(By.xpath("//*[start-with(@placeholder,'Pa']"));
+
+
 
 
 
